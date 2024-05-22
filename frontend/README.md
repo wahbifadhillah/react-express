@@ -12,7 +12,7 @@ Route: `/preview`
 - Pada halaman “Preview” akan menampilkan blog untuk masing-masing article dalam status “Publish” di sertai dengan pagination.
 
 # Note
-Menambahkan endpoint article/:limit/:offset/:status untuk mengatasi pagination. Endpoint ini memberikan data:
+Menambahkan endpoint `/article/:limit/:offset/:status` untuk mengatasi pagination. Endpoint ini memberikan data:
 ```
 {
     "data": [

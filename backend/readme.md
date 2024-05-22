@@ -46,7 +46,7 @@ Atur konfigurasi database di `config/config.json`. Lalu masukkan command `sequel
 `[Postman Collection](Article.postman_collection.json)
 
 # Note
-Menambahkan endpoint article/:limit/:offset/:status untuk mengatasi pagination. Endpoint ini memberikan data:
+Menambahkan endpoint `/article/:limit/:offset/:status` untuk mengatasi pagination. Endpoint ini memberikan data:
 ```
 {
     "data": [
