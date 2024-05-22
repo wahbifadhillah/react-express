@@ -42,6 +42,30 @@ exports.getAllArticles = async (req, res, next) => {
 	}
 };
 
+exports.getAllArticlesWithStatus = async (req, res, next) => {
+	try {
+		const limit = parseInt(req.params.limit) || 10;
+		const offset = parseInt(req.params.offset) || 0;
+		const articles = await Article.findAll({
+			limit,
+			offset,
+			where: {
+				status: req.params.status
+			}
+		});
+		const totalPublished = await Article.count({
+            where: { status: 'publish' } 
+        });
+		if (articles) {
+			res.status(200).json({data: articles, total: totalPublished});
+		} else {
+			res.status(404).json({ error: "No articles found" });
+		}
+	} catch (err) {
+		next(err);
+	}
+};
+
 exports.updateArticle = async (req, res, next) => {
 	const { id } = req.params;
 	try {
