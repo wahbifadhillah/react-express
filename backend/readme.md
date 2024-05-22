@@ -3,9 +3,13 @@ Untuk mengaktifkan project, masukkan ini pada command line:
 ```
 npm i
 ```
-lalu
+Install library migration
 ```
 npm install -g sequelize-cli
+```
+Jalankan backend dengan
+```
+node index.js
 ```
 ## Membuat database article secara manual dengan nama “posts”
 ```mysql
